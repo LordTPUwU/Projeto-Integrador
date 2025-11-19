@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyShelf 📚 - Sua Biblioteca Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -201,7 +203,8 @@
             gap: 0.5rem;
         }
 
-        .sidebar-menu li:hover, .sidebar-menu li.active {
+        .sidebar-menu li:hover,
+        .sidebar-menu li.active {
             background: linear-gradient(135deg, rgba(183, 148, 246, 0.2), rgba(251, 182, 206, 0.2));
             transform: translateX(5px);
         }
@@ -217,7 +220,8 @@
             flex-wrap: wrap;
         }
 
-        .filters input, .filters select {
+        .filters input,
+        .filters select {
             padding: 0.8rem 1.2rem;
             border: 2px solid var(--accent-purple);
             border-radius: 15px;
@@ -227,7 +231,8 @@
             transition: all 0.3s ease;
         }
 
-        .filters input:focus, .filters select:focus {
+        .filters input:focus,
+        .filters select:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(183, 148, 246, 0.2);
         }
@@ -321,9 +326,19 @@
         }
 
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(1.2); }
-            50% { transform: scale(1); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            25% {
+                transform: scale(1.2);
+            }
+
+            50% {
+                transform: scale(1);
+            }
         }
 
         .btn-remove {
@@ -423,7 +438,9 @@
             font-weight: 500;
         }
 
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
             width: 100%;
             padding: 0.8rem;
             border: 2px solid var(--accent-purple);
@@ -434,7 +451,9 @@
             transition: all 0.3s ease;
         }
 
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(183, 148, 246, 0.2);
         }
@@ -533,8 +552,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Affinity */
@@ -649,103 +673,114 @@
         }
     </style>
 </head>
+
 <body>
+    <section id="login-section" class="active">
+        <!-- aqui vai a tela de login moderna -->
+    </section>
+
     <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">MyShelf 📚</div>
-            <div class="nav-links">
-                <a href="#" onclick="showHome()">Início</a>
-                <a href="#" onclick="showLibrary()">Biblioteca</a>
-                <a href="#" onclick="showExplore()">Explorar</a>
-                <a href="#" onclick="showAffinity()">Afinidades</a>
-                <a href="#" onclick="showStats()">Estatísticas</a>
-                <a href="#" onclick="showProfile()">Perfil</a>
-                <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section (Home) -->
-    <div id="home" class="active">
-        <section class="hero">
-            <div class="container">
-                <h1>Bem-vindo ao MyShelf 📚</h1>
-                <p>Sua biblioteca digital de desejos e curtidas. Organize, explore e compartilhe suas obras favoritas.</p>
-                <button class="btn" onclick="showLibrary()">Começar Agora</button>
-            </div>
-        </section>
-
-        <!-- Popular Works -->
-        <div class="container">
-            <h2 style="text-align: center; margin: 3rem 0 2rem; font-size: 2rem;">✨ Obras Populares</h2>
-            <div class="cards-grid" id="popularWorks"></div>
-        </div>
-
-        <footer>
-            <p>Feito com 💜 por você, para você</p>
-            <div class="footer-links">
-                <a href="#" onclick="showHelp()">Ajuda</a>
-                <a href="#">Contato</a>
-                <a href="#">Sobre</a>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Library -->
-    <div id="library" class="main-content">
-        <div class="content-area">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
-                <h1>📚 Minha Biblioteca</h1>
-                <div style="display: flex; gap: 1rem;">
-                    <button class="btn-small" style="background: var(--accent-purple); color: white;" onclick="filterLibrary('wishlist')">💭 Desejos</button>
-                    <button class="btn-small" style="background: var(--accent-pink); color: white;" onclick="filterLibrary('liked')">❤️ Curtidas</button>
-                    <button class="btn-small btn-secondary" onclick="filterLibrary('all')">Todas</button>
+    <div id="app" style="display:none;">
+        <header>
+            <nav>
+                <div class="logo">MyShelf 📚</div>
+                <div class="nav-links">
+                    <a href="#" onclick="showHome()">Início</a>
+                    <a href="#" onclick="showLibrary()">Biblioteca</a>
+                    <a href="#" onclick="showExplore()">Explorar</a>
+                    <a href="#" onclick="showAffinity()">Afinidades</a>
+                    <a href="#" onclick="showStats()">Estatísticas</a>
+                    <a href="#" onclick="showProfile()">Perfil</a>
+                    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
                 </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section (Home) -->
+        <div id="home" class="active">
+            <section class="hero">
+                <div class="container">
+                    <h1>Bem-vindo ao MyShelf 📚</h1>
+                    <p>Sua biblioteca digital de desejos e curtidas. Organize, explore e compartilhe suas obras
+                        favoritas.</p>
+                    <button class="btn" onclick="showLibrary()">Começar Agora</button>
+                </div>
+            </section>
+
+            <!-- Popular Works -->
+            <div class="container">
+                <h2 style="text-align: center; margin: 3rem 0 2rem; font-size: 2rem;">✨ Obras Populares</h2>
+                <div class="cards-grid" id="popularWorks"></div>
             </div>
 
-            <div class="filters">
-                <input type="text" id="searchInput" placeholder="🔍 Buscar por nome..." oninput="filterWorks()">
-                <select id="typeFilter" onchange="filterWorks()">
-                    <option value="">Todos os tipos</option>
-                    <option value="livro">📖 Livro</option>
-                    <option value="filme">🎬 Filme</option>
-                    <option value="série">📺 Série</option>
-                </select>
-                <select id="genreFilter" onchange="filterWorks()">
-                    <option value="">Todos os gêneros</option>
-                    <option value="ficção">Ficção</option>
-                    <option value="romance">Romance</option>
-                    <option value="suspense">Suspense</option>
-                    <option value="fantasia">Fantasia</option>
-                    <option value="biografia">Biografia</option>
-                    <option value="comédia">Comédia</option>
-                    <option value="drama">Drama</option>
-                    <option value="terror">Terror</option>
-                </select>
-            </div>
-
-            <div class="cards-grid" id="libraryCards"></div>
+            <footer>
+                <p>Feito com 💜 por você, para você</p>
+                <div class="footer-links">
+                    <a href="#" onclick="showHelp()">Ajuda</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Sobre</a>
+                </div>
+            </footer>
         </div>
-    </div>
 
-    <!-- Explore -->
-    <div id="explore" class="main-content">
-        <div class="content-area">
-            <h1>🌍 Explorar Obras</h1>
-            <div class="filters" style="margin-top: 2rem;">
-                <input type="text" id="exploreSearch" placeholder="🔍 Buscar livros...">
-                <button class="btn" onclick="searchBooks()">Buscar</button>
+        <!-- Library -->
+        <div id="library" class="main-content">
+            <div class="content-area">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                    <h1>📚 Minha Biblioteca</h1>
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn-small" style="background: var(--accent-purple); color: white;"
+                            onclick="filterLibrary('wishlist')">💭 Desejos</button>
+                        <button class="btn-small" style="background: var(--accent-pink); color: white;"
+                            onclick="filterLibrary('liked')">❤️ Curtidas</button>
+                        <button class="btn-small btn-secondary" onclick="filterLibrary('all')">Todas</button>
+                    </div>
+                </div>
+
+                <div class="filters">
+                    <input type="text" id="searchInput" placeholder="🔍 Buscar por nome..." oninput="filterWorks()">
+                    <select id="typeFilter" onchange="filterWorks()">
+                        <option value="">Todos os tipos</option>
+                        <option value="livro">📖 Livro</option>
+                        <option value="filme">🎬 Filme</option>
+                        <option value="série">📺 Série</option>
+                    </select>
+                    <select id="genreFilter" onchange="filterWorks()">
+                        <option value="">Todos os gêneros</option>
+                        <option value="ficção">Ficção</option>
+                        <option value="romance">Romance</option>
+                        <option value="suspense">Suspense</option>
+                        <option value="fantasia">Fantasia</option>
+                        <option value="biografia">Biografia</option>
+                        <option value="comédia">Comédia</option>
+                        <option value="drama">Drama</option>
+                        <option value="terror">Terror</option>
+                    </select>
+                </div>
+
+                <div class="cards-grid" id="libraryCards"></div>
             </div>
-            <div id="exploreResults"></div>
         </div>
-    </div>
 
-    <!-- Affinity -->
-    <div id="affinity" class="main-content">
-        <div class="content-area">
-            <h1>🤝 Afinidades</h1>
-            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Descubra pessoas com gostos parecidos com os seus!</p>
+        <!-- Explore -->
+        <div id="explore" class="main-content">
+            <div class="content-area">
+                <h1>🌍 Explorar Obras</h1>
+                <div class="filters" style="margin-top: 2rem;">
+                    <input type="text" id="exploreSearch" placeholder="🔍 Buscar livros...">
+                    <button class="btn" onclick="searchBooks()">Buscar</button>
+                </div>
+                <div id="exploreResults"></div>
+            </div>
+        </div>
+
+        <!-- Affinity -->
+        <div id="affinity" class="main-content">
+            <div class="content-area">
+                <h1>🤝 Afinidades</h1>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Descubra pessoas com gostos parecidos com
+            </div> os seus!</p>
             <div id="affinityList"></div>
         </div>
     </div>
@@ -767,7 +802,8 @@
                 <div class="profile-name" id="profileName">Usuário MyShelf</div>
                 <div class="profile-bio">Amante de boas histórias e descobertas culturais ✨</div>
                 <button class="btn" onclick="editProfile()">⚙️ Editar Perfil</button>
-                <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="clearData()">🗑️ Limpar Dados</button>
+                <button class="btn btn-secondary" style="margin-top: 1rem;" onclick="clearData()">🗑️ Limpar
+                    Dados</button>
             </div>
         </div>
     </div>
@@ -826,7 +862,7 @@
             </form>
         </div>
     </div>
-
+    </div>
     <script>
         // Data Storage
         let works = JSON.parse(localStorage.getItem('myshelf_works') || '[]');
@@ -835,11 +871,49 @@
 
         // Initialize
         window.onload = () => {
+            const logged = localStorage.getItem('myshelf_logged');
+
+            if (logged === 'true') {
+                mostrarApp();
+            } else {
+                mostrarLogin();
+            }
+        };
+
+        function loginUser(email, password) {
+            const user = JSON.parse(localStorage.getItem('myshelf_user'));
+
+            if (user && user.email === email && user.password === password) {
+                localStorage.setItem('myshelf_logged', 'true');
+                mostrarApp();
+            } else {
+                alert("Email ou senha incorretos, meu amorzinho 🥺");
+            }
+        }
+
+
+        function logout() {
+            localStorage.removeItem('myshelf_logged');
+            mostrarLogin();
+        }
+
+
+        function mostrarApp() {
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('app').style.display = 'block';
+
+            // carregar tudo normalmente
             loadPopularWorks();
             renderLibrary();
             loadAffinity();
             updateStats();
-        };
+        }
+
+        function mostrarLogin() {
+            document.getElementById('login-section').style.display = 'flex';
+            document.getElementById('app').style.display = 'none';
+        }
+
 
         // Theme Toggle
         function toggleTheme() {
@@ -921,7 +995,7 @@
         // Save Work
         function saveWork(e) {
             e.preventDefault();
-            
+
             const work = {
                 id: editingId || Date.now(),
                 name: document.getElementById('workName').value,
@@ -982,12 +1056,12 @@
 
             container.innerHTML = filtered.map(work => `
                 <div class="card">
-                    ${work.image ? 
-                        `<img src="${work.image}" alt="${work.name}" class="card-image">` :
-                        `<div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem;">
+                    ${work.image ?
+                    `<img src="${work.image}" alt="${work.name}" class="card-image">` :
+                    `<div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem;">
                             ${work.type === 'livro' ? '📖' : work.type === 'filme' ? '🎬' : '📺'}
                         </div>`
-                    }
+                }
                     <div class="card-content">
                         <div class="card-title">${work.name}</div>
                         <div class="card-meta">
@@ -1038,12 +1112,12 @@
                 document.getElementById('workType').value = work.type;
                 document.getElementById('workGenre').value = work.genre;
                 document.getElementById('workDescription').value = work.description || '';
-                
+
                 if (work.image) {
                     document.getElementById('imagePreview').src = work.image;
                     document.getElementById('imagePreview').style.display = 'block';
                 }
-                
+
                 document.getElementById('workModal').classList.add('active');
             }
         }
@@ -1131,10 +1205,10 @@
                     const book = item.volumeInfo;
                     return `
                         <div class="card">
-                            ${book.imageLinks?.thumbnail ? 
-                                `<img src="${book.imageLinks.thumbnail}" alt="${book.title}" class="card-image">` :
-                                `<div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem;">📖</div>`
-                            }
+                            ${book.imageLinks?.thumbnail ?
+                            `<img src="${book.imageLinks.thumbnail}" alt="${book.title}" class="card-image">` :
+                            `<div class="card-image" style="display: flex; align-items: center; justify-content: center; font-size: 4rem;">📖</div>`
+                        }
                             <div class="card-content">
                                 <div class="card-title">${book.title}</div>
                                 <div class="card-meta">
@@ -1145,12 +1219,12 @@
                                 <div class="card-actions">
                                     <button class="btn-small" style="background: var(--accent-purple); color: white;" 
                                         onclick='addFromAPI(${JSON.stringify({
-                                            name: book.title,
-                                            type: 'livro',
-                                            genre: book.categories?.[0] || 'ficção',
-                                            description: book.description || '',
-                                            image: book.imageLinks?.thumbnail || ''
-                                        })})'>
+                            name: book.title,
+                            type: 'livro',
+                            genre: book.categories?.[0] || 'ficção',
+                            description: book.description || '',
+                            image: book.imageLinks?.thumbnail || ''
+                        })})'>
                                         ➕ Adicionar à Biblioteca
                                     </button>
                                 </div>
@@ -1244,7 +1318,7 @@
         function drawChart() {
             const canvas = document.getElementById('chartCanvas');
             const ctx = canvas.getContext('2d');
-            
+
             const genres = {};
             works.forEach(work => {
                 genres[work.genre] = (genres[work.genre] || 0) + 1;
@@ -1271,7 +1345,7 @@
 
             data.forEach(([genre, count], index) => {
                 const sliceAngle = (count / total) * 2 * Math.PI;
-                
+
                 ctx.fillStyle = colors[index % colors.length];
                 ctx.beginPath();
                 ctx.moveTo(centerX, centerY);
@@ -1282,7 +1356,7 @@
                 const textAngle = currentAngle + sliceAngle / 2;
                 const textX = centerX + Math.cos(textAngle) * (radius * 0.7);
                 const textY = centerY + Math.sin(textAngle) * (radius * 0.7);
-                
+
                 ctx.fillStyle = '#fff';
                 ctx.font = 'bold 14px Poppins';
                 ctx.textAlign = 'center';
@@ -1315,11 +1389,11 @@
 
         function showHelp() {
             alert('📚 MyShelf - Ajuda\n\n' +
-                  '• Adicione obras usando o botão flutuante +\n' +
-                  '• Curta suas favoritas com ❤️\n' +
-                  '• Explore novos livros na aba Explorar\n' +
-                  '• Veja suas estatísticas e afinidades\n' +
-                  '• Alterne entre modo claro/escuro 🌙');
+                '• Adicione obras usando o botão flutuante +\n' +
+                '• Curta suas favoritas com ❤️\n' +
+                '• Explore novos livros na aba Explorar\n' +
+                '• Veja suas estatísticas e afinidades\n' +
+                '• Alterne entre modo claro/escuro 🌙');
         }
 
         // Load saved username
@@ -1329,4 +1403,5 @@
         }
     </script>
 </body>
+
 </html>
